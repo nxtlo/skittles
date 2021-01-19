@@ -9,8 +9,10 @@ edition = "2018"
 [dependencies]
 rocket = "0.4.6"
 rocket_codegen = "0.4.6"
+serde = "1.0.120"
+serde_derive = "1.0.120"
 
 [dependencies.rocket_contrib]
 version = "0.4.6"
 default-features = false
-features = ["databases", "templates", "uuid", "json", "helmet"]
+features = ["databases", "templates", "uuid", "json", "helmet", "tera_templates"]

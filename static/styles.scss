@@ -5,6 +5,12 @@ body {
     background-color: $color;
 }
 
+header {
+    background: pink;
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
-    color: $textcolor
+    color: $textcolor;
 }
