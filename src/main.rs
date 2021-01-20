@@ -4,27 +4,30 @@ extern crate rocket;
 extern crate rocket_contrib;
 extern crate serde;
 
-#[macro_use]
-extern crate serde_derive;
-
 
 use std::fs::File;
 use rocket::*;
-use rocket_contrib::json::Json;
+use rocket_contrib::serve::StaticFiles;
+
+
+
 
 #[get("/")]
-fn index() -> File {
-    File::open("./static/index.html").expect("Files not found.")
-}
+pub fn index() -> File {
+    File::open("./static/pages/index.html")
+    .expect("File not found.")
+} 
 
-#[get("/drop")]
-fn drop() -> Json<String> {
-    Json(String::from("Wdup"))
+#[get("/commands")]
+pub fn commands() -> File {
+    File::open("./static/pages/commands.html")
+    .expect("commands.html was not found")
 }
 
 fn rocket() -> Rocket {
     ignite()
-    .mount("/drop", routes![drop])
+    .mount("/static", StaticFiles::from("/styles"))
+    .mount("/", routes![commands])
     .mount("/", routes![index])
 }
 

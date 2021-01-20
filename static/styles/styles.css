@@ -1,9 +1,10 @@
 body {
+  background-image: url("../images/main.gif");
   background-color: White;
 }
 
 header {
-  background: pink;
+  background-image: url("/static/images/main.gif");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,6 +14,9 @@ header {
 }
 
 h1 {
-  color: Pink;
+  background-color: Pink;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=styles.css.map */
