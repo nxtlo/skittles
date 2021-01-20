@@ -1,22 +1,81 @@
 body {
-  background-image: url("../images/main.gif");
-  background-color: White;
+  margin: 0;
+  padding: 0;
+  max-width: 100vh;
+  background-image: url("../images/cat.jpg");
+  background-size: auto;
+  
 }
 
-header {
-  background-image: url("/static/images/main.gif");
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.mid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
-h1 {
-  background-color: Pink;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.btn {
+  position: relative;
+  display: block;
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  font-family: "montserrat";
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid rgb(222, 206, 231);
+  padding: 14px 50px;
+  overflow: hidden;
+  transition: 1s all ease;
 }
-/*# sourceMappingURL=styles.css.map */
+
+.btn::before {
+  background: rgb(255, 255, 255);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.github::before {
+  width: 0;
+  height: 100%;
+}
+
+.github:hover::before {
+  width: 100%;
+}
+
+.amaya::before {
+  width: 100%;
+  height: 0;
+}
+
+.amaya:hover::before {
+  height: 100%;
+
+}
+
+.nav::before {
+  width: 100%;
+  height: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav:hover::before {
+  height: 380%;
+}
+
+
+.skittles::before {
+  width: 100%;
+  height: 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.skittles:hover::before {
+  height: 380%;
+}
